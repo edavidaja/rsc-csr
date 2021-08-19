@@ -4,14 +4,34 @@ output: html_document
 ---
 
 ```{js}
-async function getGroup() {
- let response = await fetch("https://colorado.rstudio.com/rsc/__api__/v1/server_settings/r")
- console.log(response.headers)
+const routes = [
+ {
+   "group": "Solutions Engineer",
+   "route": "bike-share"
+ },
+ {
+   "group": "Default",
+   "route": "connectwidgets-bookmarking"
+ }
+]
+
+async function getGroup(creds) {
+ let response = await fetch("https://colorado.rstudio.com/rsc/__api__/v1/server_settings/r", {
+ mode: "same-origin",
+ headers: {
+ Authorization: `Key ${creds}`
+ }
+ })
+ console.log(response.headers.get("Shiny-Server-Credentials"))
 }
 
-getGroup();
+
 ```
 
 todo:
 fetch https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API server info endpoint,
 await headers, pass value of group, 
+
+<script>
+  getGroup('`r Sys.getenv('CONNECT_API_KEY')`');
+</script>
