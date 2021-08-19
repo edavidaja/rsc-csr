@@ -1,0 +1,17 @@
+---
+title: "client-side-redirect"
+output: html_document
+---
+
+```{js}
+async function getGroup() {
+ let response = await fetch("https://colorado.rstudio.com/rsc/__api__/v1/server_settings/r")
+ console.log(response.headers)
+}
+
+getGroup();
+```
+
+todo:
+fetch https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API server info endpoint,
+await headers, pass value of group, 

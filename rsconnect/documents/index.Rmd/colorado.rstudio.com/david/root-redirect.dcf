@@ -1,0 +1,14 @@
+name: root-redirect
+title: root-redirect
+username: david
+account: david
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 9657
+bundleId: 47324
+url: https://colorado.rstudio.com/rsc/content/a1cf137a-5bf4-488b-8887-3f2b3d332f67/
+when: 1629317036.36895
+lastSyncTime: 1629317036.36896
+isQuarto: FALSE
+asMultiple: FALSE
+asStatic: FALSE
