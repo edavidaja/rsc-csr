@@ -2,9 +2,9 @@ library(shiny)
 library(tibble)
 
 route_table <- tibble::tribble(
-  ~user, ~route,
-  "cole@rstudio.com", "shiny-shell",
-  "david@rstudio.com", "plumbertableaux"
+  ~group, ~route,
+  "Default", "bike-share",
+  "Solutions Engineer", "shiny-session-info"
 ) |> tibble::deframe()
 
 ui <- fluidPage(
@@ -16,7 +16,7 @@ ui <- fluidPage(
 server <- function(input, output, session) {
   observe({
     route <- paste0(
-      Sys.getenv("CONNECT_SERVER"), route_table[session$user]
+      Sys.getenv("CONNECT_SERVER"), route_table[session$groups]
     )
     print(route)
 
