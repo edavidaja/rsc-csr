@@ -1,6 +1,4 @@
-Shiny.addCustomMessageHandler("reroute",
-  function(message) {
-    console.log(message)
-    window.location.href = message
-    }
-  );
+Shiny.addCustomMessageHandler("reroute", function (message) {
+  console.log(message);
+  window.location.href = message;
+});
