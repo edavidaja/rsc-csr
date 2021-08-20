@@ -7,7 +7,11 @@ route_table <- tibble::tribble(
   "david@rstudio.com", "plumbertableaux"
 ) |> tibble::deframe()
 
-ui <- fluidPage()
+ui <- fluidPage(
+  singleton(
+    tags$head(tags$script(src = "redirect.js"))
+  )
+)
 
 server <- function(input, output, session) {
   observe({
