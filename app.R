@@ -1,11 +1,14 @@
 library(shiny)
 library(tibble)
 
-route_table <- tibble::tribble(
-  ~group, ~route,
-  "Default", "bike-share",
-  "Solutions Engineer", "shiny-session-info"
-) |> tibble::deframe()
+route_table <-
+  tibble::deframe(
+    tibble::tribble(
+      ~group, ~route,
+      "Default", "bike-share",
+      "Solutions Engineer", "shiny-session-info"
+    )
+  )
 
 ui <- fluidPage(
   singleton(
